@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fefefe;
@@ -5,6 +8,42 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+}
+:root {
+  --bg: #fefefe;
+  --text: #2c3e50;
+  --card: #ffffff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  background-color: var(--card);
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --card: #1e1e1e;
+}
+
+body.dark a {
+  color: #66b2ff;
+}
+aside {
+  background-color: #eaf6ff;
+  padding: 12px 20px;
+  border-left: 4px solid #007acc;
+  margin: 20px 0;
+  border-radius: 6px;
+  font-style: italic;
+}
+body.dark aside {
+  background-color: #1e2a33;
+  border-left-color: #66b2ff;
 }
 
 a {
