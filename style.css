@@ -58,3 +58,15 @@ footer {
 .links a:hover {
   text-decoration: underline;
 }
+
+.project h3 a,
+.experience h3 a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.project h3 a:hover,
+.experience h3 a:hover {
+  color: #007acc;
+  text-decoration: underline;
+}
