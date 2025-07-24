@@ -42,6 +42,24 @@ ul {
   padding-left: 20px;
 }
 
+/* 🎯 HIGHLIGHTED PROJECT TITLES */
+.project h3 a {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #f0f8ff;  /* Light pastel blue */
+  color: #005999;             /* Deep blue text */
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.project h3 a:hover {
+  background-color: #e0f0ff;
+  box-shadow: 0 2px 8px rgba(0, 89, 153, 0.2);
+}
+
+/* 🔗 Footer Links */
 footer {
   text-align: center;
   padding: 30px 0;
@@ -56,17 +74,5 @@ footer {
 }
 
 .links a:hover {
-  text-decoration: underline;
-}
-
-.project h3 a,
-.experience h3 a {
-  color: #2c3e50;
-  text-decoration: none;
-}
-
-.project h3 a:hover,
-.experience h3 a:hover {
-  color: #007acc;
   text-decoration: underline;
 }
