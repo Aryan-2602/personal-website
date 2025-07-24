@@ -14,6 +14,19 @@ body {
   --text: #2c3e50;
   --card: #ffffff;
 }
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #007acc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .profile-pic {
+  border-color: #66b2ff;
+}
 
 body {
   background-color: var(--bg);
