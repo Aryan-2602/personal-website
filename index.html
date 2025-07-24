@@ -3,128 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aryan Maheshwari | Personal Website</title>
+  <title>Aryan Maheshwari | AI Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <div class="container">
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">Aryan Maheshwari</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero / Intro -->
-    <section class="hero">
-      <h1>👋 Hey there — I’m Aryan Maheshwari</h1>
-      <p>
-        Even before I could write full sentences, I was the kind of kid who unscrewed remote controls just to “see how they worked.” That curiosity didn’t fade—it evolved. Today, I’m a builder in AI with a keen eye for impactful, scalable solutions—shaped by a strong foundation in data science, real-world experience, and a love for collaborative innovation.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>👋 Hey there — I’m Aryan Maheshwari</h2>
+      <p>Builder in AI | M.S. Applied Data Science @ USC | Passionate about Reinforcement Learning, NLP, and Impactful Systems</p>
+    </div>
+  </section>
 
-    <!-- About -->
-    <section>
-      <h2>🎓 A Journey Rooted in Learning</h2>
-      <p>
-        My academic path began at K.J. Somaiya Institute of Technology, where I earned my B.Tech in Artificial Intelligence and Data Science with a specialization in Blockchain. <br><br>
-        Currently, I’m pursuing my M.S. in Applied Data Science at the University of Southern California, applying everything I’ve learned in cutting-edge research and real-world systems.
-      </p>
-    </section>
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>🎓 About Me</h2>
+    <p>
+      Even before I could write full sentences, I was the kind of kid who unscrewed remote controls just to “see how they worked”...
+      <br><br>
+      My academic path began at K.J. Somaiya Institute of Technology (B.Tech AI + Blockchain) and continues at USC (M.S. Applied Data Science).
+    </p>
+  </section>
 
     <!-- Projects -->
-   <section>
-  <h2>🚀 Projects</h2>
+  <section class="section alt" id="projects">
+    <h2>🚀 Projects</h2>
 
-  <div class="project">
-    <h3>
-      <a href="https://github.com/Aryan-2602/stepsai_test" target="_blank">
-        📚 Hierarchical Text Retrieval & QA System (RAPTOR + MILVUS)
-      </a>
-    </h3>
-    <p>I engineered a textbook-scale retrieval pipeline using RAPTOR indexing, Gaussian Mixture summarization, and GPT-3.5 Turbo...</p>
-  </div>
+    <div class="card">
+      <h3><a href="https://github.com/Aryan-2602/stepsai_test" target="_blank">📚 Hierarchical Text Retrieval & QA System</a></h3>
+      <p>RAPTOR + SBERT + GPT-3.5 QA pipeline with Milvus vector DB</p>
+    </div>
 
-  <div class="project">
-    <h3>
-      <a href="https://github.com/Aryan-2602/Convexia_demo" target="_blank">
-        💊 Toxicity Prediction Pipeline
-      </a>
-    </h3>
-    <p>Robust AI system for predicting drug toxicity endpoints using SMILES data. Powered by FastAPI, Celery, DVC, MLflow, etc...</p>
-  </div>
+    <div class="card">
+      <h3><a href="https://github.com/Aryan-2602/Convexia_demo" target="_blank">💊 Toxicity Prediction Pipeline</a></h3>
+      <p>FastAPI, Celery, MLflow, XGBoost for real-time SMILES toxicity prediction</p>
+    </div>
 
-  <div class="project">
-    <h3>
-      <a href="https://github.com/Aryan-2602/fetchreach-ppo" target="_blank">
-        🕹️ RL for Robotic Arm Control (MuJoCo + PPO)
-      </a>
-    </h3>
-    <p>Trained a PPO agent to control a Fetch robot arm using Gymnasium + Apple MPS. Includes evaluation dashboard + video logging...</p>
-  </div>
+    <div class="card">
+      <h3><a href="https://github.com/Aryan-2602/fetchreach-ppo" target="_blank">🕹️ RL for Robotic Arm (MuJoCo + PPO)</a></h3>
+      <p>Gymnasium + PPO + Apple MPS with training logs and policy video</p>
+    </div>
 
-  <div class="project">
-    <h3>
-      <a href="https://github.com/Aryan-2602/tumor_response_predictor" target="_blank">
-        🔬 Tumor Classification from Histopathology
-      </a>
-    </h3>
-    <p>ResNet-based IDC classifier with Grad-CAM and GAN-based augmentation. Deployed via Streamlit for interactivity...</p>
-  </div>
+    <div class="card">
+      <h3><a href="https://github.com/Aryan-2602/tumor_response_predictor" target="_blank">🔬 Tumor Classification (ResNet + GAN)</a></h3>
+      <p>ResNet + Grad-CAM + DCGAN + Streamlit frontend for IDC detection</p>
+    </div>
 
-  <div class="project">
-    <h3>
-      <a href="https://github.com/Aryan-2602/grid_solver" target="_blank">
-        🎮 GridWorld with Tabular Q-Learning
-      </a>
-    </h3>
-    <p>Multi-goal, partially observable GridWorld with tabular Q-learning and trajectory visualizations...</p>
-  </div>
-</section>
+    <div class="card">
+      <h3><a href="https://github.com/Aryan-2602/grid_solver" target="_blank">🎮 GridWorld with Q-Learning</a></h3>
+      <p>Custom GridWorld + tabular Q-learning + trajectory animations</p>
+    </div>
+  </section>
 
     <!-- Experience -->
-    <section>
-      <h2>💼 Experience</h2>
+  <section class="section" id="experience">
+    <h2>💼 Experience</h2>
+    <div class="card">
+      <h3>🎯 USC Summer Research Intern</h3>
+      <p>FIFA-style sports simulator with hybrid AI roster engine</p>
+    </div>
+    <div class="card">
+      <h3>🚗 USC Autodrive Lab</h3>
+      <p>DRL for self-driving: PPO/SAC + CUDA-accelerated transformer training</p>
+    </div>
+    <div class="card">
+      <h3>🤖 AGIE AI Intern</h3>
+      <p>GPT-integrated chatbot + insight-to-startup matcher</p>
+    </div>
+  </section>
 
-      <div class="experience">
-        <h3>🎯 USC Summer Research Intern — Sports Simulation Engine</h3>
-        <p>Led 8 interns building a FIFA-style simulation engine. Designed a hybrid AI + logic-based roster system, reducing lineup errors by 40% and improving match consistency.</p>
-      </div>
-
-      <div class="experience">
-        <h3>🚗 USC Autodrive Lab — AI Research Intern</h3>
-        <p>Worked on autonomous driving modules and DRL-based policy learning with PPO/SAC. Deployed transformer models on CUDA systems, improving training runtime 4x.</p>
-      </div>
-
-      <div class="experience">
-        <h3>🤖 AGIE AI — Generative AI Intern</h3>
-        <p>Built a WhatsApp chatbot (Dialogflow + Vertex AI) and a GPT-powered startup research matcher. Improved data flow latency by 23%.</p>
-      </div>
-    </section>
 
     <!-- Research -->
-    <section>
-  <h2>📄 Research</h2>
-  <p>
-    I’ve authored two research papers:
-    <br>
-    – <a href="https://example.com/blockchain-election-paper" target="_blank">
-      <em>Blockchain-Based Election Systems</em>
-    </a>
-    <br>
-    – <a href="https://example.com/ai-in-industry-paper" target="_blank">
-      <em>AI in Industry</em>
-    </a>
-    <br><br>
-    Research taught me how to ask deeper questions, evaluate rigor, and communicate ideas effectively.
-  </p>
-</section>
+  <section class="section alt" id="research">
+    <h2>📄 Research</h2>
+    <p>
+      Authored:
+      <br>– <a href="https://example.com/blockchain-election-paper" target="_blank"><em>Blockchain-Based Election Systems</em></a>
+      <br>– <a href="https://example.com/ai-in-industry-paper" target="_blank"><em>AI in Industry</em></a>
+    </p>
+  </section>
 
+    <!-- Contact -->
+  <section class="section" id="contact">
+    <h2>📬 Contact</h2>
+    <div class="resume-button">
+        <a href="assets/Resume Comprehensive-2-3.pdf" download>
+            <button>📄 Resume</button>
+        </a>
+    </div>
+    <div class="icon-links">
+      <a href="https://github.com/Aryan-2602" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="aryan26.03.02@gmail.com"><i class="fas fa-envelope fa-2x"></i></a>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      <hr />
-      <div class="links">
-        <a href="https://github.com/Aryan-2602" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/maheshwariaryan/" target="_blank">LinkedIn</a>
-        <a href="mailto:aryan26.03.02@gmail.com">Email</a>
-      </div>
-    </footer>
-
-  </div>
-</body>
+  </body>
 </html>
