@@ -151,58 +151,80 @@ aside{
   box-shadow:0 10px 20px rgba(0,0,0,.08);
 }
 
-/* Recommendations */
-/* Recommendations — compact, equal-height feel */
-.rec-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-  gap:16px;
+/* ============================= */
+/* Recommendations — horizontal  */
+/* ============================= */
+.rec-strip{
+  position: relative;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 6px 4px 10px;        /* room for shadows */
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;        /* Firefox hide scrollbar */
+}
+.rec-strip::-webkit-scrollbar{ display: none; } /* WebKit hide */
+
+/* Elegant edge fades to suggest scrolling */
+.rec-strip::before,
+.rec-strip::after{
+  content:"";
+  position:absolute; top:0; bottom:0; width:40px;
+  pointer-events:none; z-index:1;
+}
+.rec-strip::before{
+  left:0;
+  background:linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+.rec-strip::after{
+  right:0;
+  background:linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
 }
 
+/* Cards: consistent width, natural height (no truncation) */
 .rec-card{
-  position:relative;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: clamp(260px, 80vw, 420px); /* not too wide on desktop, comfy on mobile */
+  position: relative;
   background:#f8f8f8;
   border:1px solid var(--border);
   border-left:3px solid var(--accent);
-  padding:16px 16px 14px;
+  padding: 16px 16px 14px;
   border-radius:10px;
-  transition:transform .15s ease, box-shadow .25s ease;
+  transition: transform .15s ease, box-shadow .25s ease;
   box-shadow:0 2px 6px rgba(0,0,0,.04);
-  min-height: 180px; /* keeps cards from looking too uneven */
+}
+.rec-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
 
+/* Decorative quote mark */
 .rec-card::before{
   content:"“";
-  font-size:2.6rem;
-  color:#d0d0d0;
+  font-size:2.6rem; color:#d0d0d0;
   position:absolute; left:10px; top:-10px;
 }
 
-/* Clamp quote to keep cards short & consistent */
+/* Full text (no clamping) */
 .rec-card p{
-  margin: 2px 0 10px 0;
+  margin: 2px 0 12px 0;
   color:#222;
-  display:-webkit-box;
-  line-clamp: 5;
-  -webkit-line-clamp: 5;     /* <<< clamp to ~5 lines */
-  -webkit-box-orient: vertical;
-  overflow:hidden;
 }
 
-/* Footer: stacks tightly */
+/* Footer layout */
 .rec-footer{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:12px;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
 }
-
-/* Name + title */
 .rec-card strong{ font-weight:600; }
 .rec-card span{ color:var(--muted); font-size:.95rem; }
 
 /* LinkedIn round icon (monochrome to match theme) */
 .linkedin-icon{
+  margin-top:10px;
   width:28px; height:28px; border-radius:50%;
   display:inline-flex; align-items:center; justify-content:center;
   border:1px solid #d4d4d4; background:#fff; color:#111; font-size:14px;
@@ -212,7 +234,10 @@ aside{
   background:#111; color:#fff; border-color:#111;
   transform:scale(1.06);
 }
-/* Mobile polish */
+
+/* =============== */
+/* Mobile polish   */
+/* =============== */
 @media (max-width: 480px){
   body{ font-size:16px; line-height:1.7; }
 
@@ -233,8 +258,6 @@ aside{
   .bullets{ margin-left:16px; }
 
   /* Recommendations tighter on mobile */
-  .rec-grid{ gap:14px; }
+  .rec-strip{ gap:14px; }
   .rec-card{ padding:14px 14px 12px; }
-  .rec-card p{ -webkit-line-clamp: 6; line-clamp: 6; } /* allow one more line on small screens */
 }
-

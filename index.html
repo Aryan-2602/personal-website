@@ -198,43 +198,45 @@
     </p>
   </section>
 
-  <!-- Recommendations -->
-  <section class="section alt" id="recommendations">
-    <h2>🌟 Recommendations</h2>
-    <div class="rec-grid" id="rec-grid"></div>
-  </section>
+<!-- Recommendations -->
+<section class="section alt" id="recommendations">
+  <h2>🌟 Recommendations</h2>
+  <div class="rec-strip" id="rec-strip"></div>
+</section>
 
-  <script>
-    async function loadRecs() {
-      try {
-        const res = await fetch('assets/recommendations.json');
-        const data = await res.json();
-        const grid = document.getElementById('rec-grid');
-        grid.innerHTML = data.map(r => `
-          <blockquote class="rec-card" itemscope itemtype="https://schema.org/Review">
-            <p itemprop="reviewBody">“${r.quote}”</p>
-            <footer class="rec-footer">
-              <div class="rec-info">
-                <strong itemprop="author" itemscope itemtype="https://schema.org/Person">
-                  <span itemprop="name">${r.name}</span>
-                </strong><br>
-                <span>${r.role}</span>
-                <div>
-                  <a href="${r.linkedin}" target="_blank" rel="noopener" class="linkedin-icon" aria-label="LinkedIn profile of ${r.name}">
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
+<script>
+  async function loadRecs() {
+    try {
+      const res = await fetch('assets/recommendations.json');
+      const data = await res.json();
+      const strip = document.getElementById('rec-strip');
+      strip.innerHTML = data.map(r => `
+        <blockquote class="rec-card" itemscope itemtype="https://schema.org/Review">
+          <p itemprop="reviewBody">“${r.quote}”</p>
+          <footer class="rec-footer">
+            <div class="rec-info">
+              <strong itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">${r.name}</span>
+              </strong><br>
+              <span>${r.role}</span>
+              <div>
+                <a href="${r.linkedin}" target="_blank" rel="noopener"
+                   class="linkedin-icon" aria-label="LinkedIn profile of ${r.name}">
+                  <i class="fab fa-linkedin"></i>
+                </a>
               </div>
-            </footer>
-            <meta itemprop="itemReviewed" content="Aryan Maheshwari">
-          </blockquote>
-        `).join('');
-      } catch (e) {
-        console.error('Failed to load recommendations:', e);
-      }
+            </div>
+          </footer>
+          <meta itemprop="itemReviewed" content="Aryan Maheshwari">
+        </blockquote>
+      `).join('');
+    } catch (e) {
+      console.error('Failed to load recommendations:', e);
     }
-    loadRecs();
-  </script>
+  }
+  loadRecs();
+</script>
+
 
   <!-- Contact -->
   <section class="section" id="contact">
