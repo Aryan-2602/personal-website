@@ -10,7 +10,21 @@
     "quote": "I am pleased to recommend Aryan Maheshwari, an exceptional student from the AI & Data Science program at KJ Somaiya Institute of Technology. Throughout his B.Tech, Aryan consistently demonstrated outstanding technical skills, deep curiosity for machine learning, and a problem-solving mindset.With a stellar GPA of 9.4, he excelled in both academic and practical domains—contributing to impactful projects like Semantic Segmentation in Self-Driving Cars and Stock Price Prediction Using LSTM. His strong grasp of advanced mathematics, ML techniques, and participation in hackathons and Kaggle competitions set him apart as a well-rounded talent.Beyond his technical ability, Aryan stands out for his leadership, collaboration, and clear communication of complex ideas. His integrity, reliability, and drive for excellence make him an asset in any academic or professional setting. I have no doubt he will excel in all future endeavors.",
     "name": "Dr. Milind Nemade",
     "role": "Professor and Head of Artificial Intelligence and Data Science Department, KJ Somaiya Institute of Technology",
-    "photo": "recs/nemade.png",
+    "photo": "",
     "linkedin": "https://www.linkedin.com/in/milind-nemade-657627b8/"
+  },
+  {
+    "quote": "Aryan’s time at AGIE AI was marked by outstanding technical execution and creativity. He spearheaded the development of a Dialogflow-based WhatsApp chatbot integrated with Vertex AI, significantly improving user engagement and interaction flow. His ability to merge technical precision with creativity was evident in the customized astrology animations he built using Manim, delivering complex mathematical visualizations that perfectly aligned with client needs. Aryan also developed a highly impactful Proof of Concept using LLMs for semantic similarity scoring, enabling automated data extraction that streamlined insights for AI startups. His work ethic, problem-solving skills, and clear communication made him an invaluable asset to our team, and I am confident he will excel in any future challenge.",
+    "name": "Chetan Kumar",
+    "role": "VP of Technology, AGIE AI",
+    "photo": "",
+    "linkedin": "https://www.linkedin.com/in/chetan-kumar-7a2006a/"
+  },
+  {
+    "quote": "As the faculty advisor for an AI-powered sports simulation project, I worked with Aryan for two months while he led a team of eight interns. In that time, he showed strong organizational skills, kept communication clear, and maintained steady progress toward milestones. He was able to coordinate well between technical and non-technical contributors, and approached challenges constructively. While our time working together was brief, he made a positive contribution to the project and showed promise in a leadership role. A rare gem!",
+    "name": "Scott Easley",
+    "role": "Senior Lecturer USC Games, USC Viterbi School of Engineering - Department of Computer Science",
+    "photo": "",
+    "linkedin": "https://www.linkedin.com/in/scott-easley-b209771/"
   }
 ]
