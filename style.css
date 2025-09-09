@@ -157,16 +157,36 @@ aside{
 }
 .icon-links a:hover{ opacity:.7; transform:scale(1.06); }
 
-/* Resume Button */
-.resume-button{ text-align:center; margin-top:28px; }
-.resume-button button{
-  background:#111; color:#fff; border:1px solid #111;
-  padding:12px 28px; font-size:16px; font-weight:600; border-radius:10px; cursor:pointer;
-  transition:transform .2s ease, box-shadow .25s ease, background .2s ease, color .2s ease;
+/* Resume Buttons */
+.resume-buttons{ 
+  text-align:center; 
+  margin-top:28px; 
+  display:flex; 
+  gap:16px; 
+  justify-content:center; 
+  flex-wrap:wrap; 
 }
-.resume-button button:hover{
+.resume-btn{
+  background:#111; 
+  color:#fff; 
+  border:1px solid #111;
+  padding:12px 24px; 
+  font-size:15px; 
+  font-weight:600; 
+  border-radius:10px; 
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .25s ease, background .2s ease, color .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+}
+.resume-btn:hover{
   transform:translateY(-1px);
   box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+.resume-btn i{
+  font-size:14px;
 }
 
 /* ============================= */
@@ -313,5 +333,19 @@ aside{
   .read-more-btn{
     padding: 6px 12px;
     font-size: 12px;
+  }
+
+  /* Resume buttons on mobile */
+  .resume-buttons{ 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 12px; 
+  }
+  .resume-btn{
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
   }
 }
