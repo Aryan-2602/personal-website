@@ -170,67 +170,81 @@ aside{
 }
 
 /* ============================= */
-/* Recommendations — horizontal  */
+/* Recommendations — vertical    */
 /* ============================= */
-.rec-strip{
-  position: relative;
+.rec-container{
   display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: visible;
-  padding: 6px 4px 10px;        /* room for shadows */
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;        /* Firefox hide scrollbar */
-}
-.rec-strip::-webkit-scrollbar{ display: none; } /* WebKit hide */
-
-/* Elegant edge fades to suggest scrolling */
-.rec-strip::before,
-.rec-strip::after{
-  content:"";
-  position:absolute; top:0; bottom:0; width:40px;
-  pointer-events:none; z-index:1;
-}
-.rec-strip::before{
-  left:0;
-  background:linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
-}
-.rec-strip::after{
-  right:0;
-  background:linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-/* Cards: consistent width, natural height (no truncation) */
 .rec-card{
-  scroll-snap-align: start;
-  flex: 0 0 auto;
-  width: clamp(260px, 80vw, 420px); /* not too wide on desktop, comfy on mobile */
   position: relative;
-  background:#f8f8f8;
-  border:1px solid var(--border);
-  border-left:3px solid var(--accent);
-  padding: 16px 16px 14px;
-  border-radius:10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 20px 22px;
+  border-radius: 12px;
   transition: transform .15s ease, box-shadow .25s ease;
-  box-shadow:0 2px 6px rgba(0,0,0,.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
 }
 .rec-card:hover{
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
 }
 
 /* Decorative quote mark */
 .rec-card::before{
-  content:"“";
-  font-size:2.6rem; color:#d0d0d0;
-  position:absolute; left:10px; top:-10px;
+  content: """;
+  font-size: 2.6rem;
+  color: #d0d0d0;
+  position: absolute;
+  left: 10px;
+  top: -10px;
 }
 
-/* Full text (no clamping) */
-.rec-card p{
-  margin: 2px 0 12px 0;
-  color:#222;
+/* Quote content */
+.rec-content{
+  margin-bottom: 16px;
+}
+
+.rec-quote, .rec-quote-full{
+  margin: 2px 0 0 0;
+  color: #222;
+  line-height: 1.6;
+}
+
+.rec-quote{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Read More Button */
+.read-more-btn{
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0;
+  margin: 8px 0 16px 0;
+  transition: color .2s ease, transform .2s ease;
+}
+.read-more-btn:hover{
+  color: #000;
+  transform: translateX(2px);
+}
+.read-more-icon{
+  transition: transform .3s ease;
+  font-size: 12px;
 }
 
 /* Footer layout */
@@ -275,7 +289,8 @@ aside{
   .card{ padding:16px 16px; border-radius:10px; }
   .bullets{ margin-left:16px; }
 
-  /* Recommendations tighter on mobile */
-  .rec-strip{ gap:14px; }
-  .rec-card{ padding:14px 14px 12px; }
+  /* Recommendations on mobile */
+  .rec-container{ gap:16px; }
+  .rec-card{ padding:16px 18px; }
+  .rec-quote{ -webkit-line-clamp: 2; }
 }

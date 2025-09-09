@@ -1,0 +1,53 @@
+﻿ARYAN MAHESHWARI
+Los Angeles, California | (213) 272-9648 | aryan26.03.02@gmail.com | LinkedIn | Personal Website | GitHub
+
+
+EDUCATION
+University of Southern California, MS in Applied Data Science | Los Angeles, California                                            December 2026
+K.J Somaiya Institute of Technology, BTech in Artificial Intelligence and Data Science | Mumbai,India                               May 2024        
+
+
+TECHNICAL SKILLS
+Languages: Python, C++, JavaScript/TypeScript
+Frameworks: FastAPI, Flask, Django, React, Next.js, Node.js
+Databases: PostgreSQL, MySQL, MongoDB, Redis
+Cloud & Infra: AWS, GCP, Azure, Docker, Kubernetes, Terraform, CI/CD (GitHub Actions, Jenkins)
+Systems & Tools: REST APIs, Data Pipelines, Kafka, LangChain, CUDA, Git
+
+
+PROFESSIONAL EXPERIENCE
+Convexia (YC’25)         San Francisco,California
+Software Engineer        July 2025-Present
+* Built modular service-oriented infrastructure for toxicity evaluation, integrating 6 microservices with MLflow, structured logging, and API gateways; reduced CI/CD runtime by 30% via optimized directory design and automated startup scripts.
+* Optimized full-stack monitoring system with FastAPI, PostgreSQL, and React dashboards to visualize SHAP-based feature importances and real-time confidence metrics, ensuring 100% reproducibility across pipelines.
+USC Games        Los Angeles,California
+Software Engineer        June 2025-September 2025
+* Designed hybrid coach selection engine as a scalable backend service (FastAPI + PostgreSQL), dynamically evaluating 15+ attributes with rule-based and algorithmic scoring to improve matching accuracy by 25% and reduce lineup imbalance by 40%.
+* Led team of 8 interns in developing production-ready sports simulation platform; implemented data pipelines, backend APIs, and deployment infra on AWS/GCP, ensuring reproducibility and on-time delivery.
+USC Autodrive Lab        Los Angeles,California
+Software Engineer        June 2025-Present
+* Engineered distributed microservices for perception and planning stack, containerized with Docker and deployed on NVIDIA GPU clusters, achieving 4× faster training/inference throughput.
+* Programmed telemetry APIs and database schemas for 500+ simulation test runs, enabling automated logging, monitoring, and real-time visualization of vehicle performance metrics.
+AGIE AI        Mumbai, India
+Software Engineer        August 2024-November 2024
+* Integrated Dialogflow + Vertex AI chatbot with REST APIs, reducing latency by 23% (1.3s → 1.0s) and scaling across 2 client pilots.
+* Directed 3-member team to design PoC for semantic search system with GPT-3.5, integrating retrieval APIs and achieving >80% relevance precision.
+Exicom Technologies        Mumbai, India
+Software Engineer        August 2023-December 2023
+* Optimized RESTful APIs with PostgreSQL integration for telemetry feature store, reducing query latency by 35% under high concurrency while ensuring horizontal scalability.
+* Created real-time data pipelines with parallel processing and caching, lowering end-to-end latency from 250ms → 200ms in communication systems.
+Dawn Digitech        Mumbai, India
+Software Engineer        February 2023-May 2023
+* Engineered preprocessing pipelines and modular services for interview analysis platform, boosting sentiment model accuracy by 15%.
+* Devised NLP microservices with BERT/VADER, exposing endpoints for polarity classification and improving downstream app performance by 30%.
+
+
+PROJECTS
+EduMate.ai (GitHub)
+* Engineered full-stack educational platform with RAG-based Q&A, quiz/flashcard generation, and real-time chat, integrating FastAPI, Next.js, and AWS Fargate to enable 10,000+ page ingestion with sub-2s query latency.
+HieQue (GitHub) 
+* Developed scalable multi-level document retrieval system combining BM25, GPT-4-turbo, and SPIDER-based semantic search, improving re-ranking precision by 30% and ensuring low-latency query execution across 300+ page textbooks.
+
+
+Task Queue (GitHub)
+* Built fault-tolerant distributed job scheduler with REST/gRPC APIs, Redis-backed queues, and worker pools, achieving 100k+ daily task executions with < 100ms scheduling latency under high concurrency.

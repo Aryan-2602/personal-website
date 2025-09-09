@@ -225,7 +225,7 @@
 <!-- Recommendations -->
 <section class="section alt" id="recommendations">
   <h2>🌟 Recommendations</h2>
-  <div class="rec-strip" id="rec-strip"></div>
+  <div class="rec-container" id="rec-container"></div>
 </section>
 
 <script>
@@ -233,10 +233,17 @@
     try {
       const res = await fetch('assets/recommendations.json');
       const data = await res.json();
-      const strip = document.getElementById('rec-strip');
-      strip.innerHTML = data.map(r => `
+      const container = document.getElementById('rec-container');
+      container.innerHTML = data.map((r, index) => `
         <blockquote class="rec-card" itemscope itemtype="https://schema.org/Review">
-          <p itemprop="reviewBody">“${r.quote}”</p>
+          <div class="rec-content">
+            <p class="rec-quote" itemprop="reviewBody">"${r.quote}"</p>
+            <p class="rec-quote-full" itemprop="reviewBody" style="display: none;">"${r.quote}"</p>
+          </div>
+          <button class="read-more-btn" onclick="toggleReadMore(${index})">
+            <span class="read-more-text">Read More</span>
+            <i class="fas fa-chevron-down read-more-icon"></i>
+          </button>
           <footer class="rec-footer">
             <div class="rec-info">
               <strong itemprop="author" itemscope itemtype="https://schema.org/Person">
@@ -258,6 +265,30 @@
       console.error('Failed to load recommendations:', e);
     }
   }
+
+  function toggleReadMore(index) {
+    const card = document.querySelectorAll('.rec-card')[index];
+    const shortQuote = card.querySelector('.rec-quote');
+    const fullQuote = card.querySelector('.rec-quote-full');
+    const readMoreBtn = card.querySelector('.read-more-btn');
+    const readMoreText = card.querySelector('.read-more-text');
+    const readMoreIcon = card.querySelector('.read-more-icon');
+    
+    if (shortQuote.style.display === 'none') {
+      // Collapse
+      shortQuote.style.display = 'block';
+      fullQuote.style.display = 'none';
+      readMoreText.textContent = 'Read More';
+      readMoreIcon.style.transform = 'rotate(0deg)';
+    } else {
+      // Expand
+      shortQuote.style.display = 'none';
+      fullQuote.style.display = 'block';
+      readMoreText.textContent = 'Read Less';
+      readMoreIcon.style.transform = 'rotate(180deg)';
+    }
+  }
+
   loadRecs();
 </script>
 
