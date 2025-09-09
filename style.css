@@ -132,6 +132,24 @@ aside{
   padding:4px 10px; border-radius:999px; font-size:12px; font-weight:600;
 }
 
+/* Skills Grid */
+.skills-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; margin-top:20px;
+}
+.skill-category{
+  background:var(--card); border:1px solid var(--border); padding:20px; border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04); transition:transform .15s ease, box-shadow .25s ease;
+}
+.skill-category:hover{
+  transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+.skill-category h3{
+  margin:0 0 12px 0; color:var(--text); font-size:1.1rem; font-weight:600;
+}
+.skill-category .skills{
+  margin-top:0;
+}
+
 /* Contact Icons */
 .icon-links{ text-align:center; margin-top:22px; }
 .icon-links a{
