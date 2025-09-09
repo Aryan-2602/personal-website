@@ -240,7 +240,7 @@
             <p class="rec-quote" itemprop="reviewBody">"${r.quote}"</p>
             <p class="rec-quote-full" itemprop="reviewBody" style="display: none;">"${r.quote}"</p>
           </div>
-          <button class="read-more-btn" onclick="toggleReadMore(${index})">
+          <button class="read-more-btn" onclick="toggleReadMore(${index})" aria-expanded="false" aria-label="Read more recommendation">
             <span class="read-more-text">Read More</span>
             <i class="fas fa-chevron-down read-more-icon"></i>
           </button>
@@ -280,12 +280,14 @@
       fullQuote.style.display = 'none';
       readMoreText.textContent = 'Read More';
       readMoreIcon.style.transform = 'rotate(0deg)';
+      readMoreBtn.setAttribute('aria-expanded', 'false');
     } else {
       // Expand
       shortQuote.style.display = 'none';
       fullQuote.style.display = 'block';
       readMoreText.textContent = 'Read Less';
       readMoreIcon.style.transform = 'rotate(180deg)';
+      readMoreBtn.setAttribute('aria-expanded', 'true');
     }
   }
 
