@@ -22,6 +22,7 @@
       <h1 class="logo">Aryan Maheshwari</h1>
       <nav>
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -62,6 +63,31 @@
       Beyond technical skills, I believe in the power of collaboration and knowledge sharing. I've published research papers on AI evolution and blockchain-based systems, and I'm always excited to work on projects that push the boundaries of what's possible with AI.
     </p>
     <p>Let's build the future of AI together.</p>
+  </section>
+
+  <!-- Education -->
+  <section class="section alt" id="education">
+    <h2>🎓 Education</h2>
+    
+    <div class="card">
+      <h3>🏛️ University of Southern California</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> 2024 – 2026</span>
+        <span><i class="fas fa-map-marker-alt"></i> Los Angeles, California</span>
+      </div>
+      <p class="tagline">Master of Science in Applied Data Science</p>
+      <p>Pursuing advanced studies in data science with focus on machine learning, statistical modeling, and real-world applications. Coursework includes advanced algorithms, big data analytics, and AI systems design.</p>
+    </div>
+
+    <div class="card">
+      <h3>🏫 K.J. Somaiya Institute of Technology</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> 2020 – 2024</span>
+        <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
+      </div>
+      <p class="tagline">Bachelor of Technology in Artificial Intelligence and Data Science</p>
+      <p>Comprehensive undergraduate program covering AI fundamentals, machine learning algorithms, data structures, and blockchain technology. Specialized coursework in deep learning, computer vision, and natural language processing.</p>
+    </div>
   </section>
 
   <!-- Technical Skills -->
@@ -254,16 +280,45 @@
 <!-- Recommendations -->
 <section class="section alt" id="recommendations">
   <h2>🌟 Recommendations</h2>
-  <div class="rec-container" id="rec-container"></div>
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track"></div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous recommendation">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <button class="carousel-btn next-btn" onclick="changeSlide(1)" aria-label="Next recommendation">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
 </section>
 
 <script>
+  let currentSlide = 0;
+  let recommendations = [];
+  let autoSlideInterval;
+
   async function loadRecs() {
     try {
       const res = await fetch('assets/recommendations.json');
-      const data = await res.json();
-      const container = document.getElementById('rec-container');
-      container.innerHTML = data.map((r, index) => `
+      recommendations = await res.json();
+      renderCarousel();
+      startAutoSlide();
+    } catch (e) {
+      console.error('Failed to load recommendations:', e);
+    }
+  }
+
+  function renderCarousel() {
+    const track = document.getElementById('carousel-track');
+    const dots = document.getElementById('carousel-dots');
+    
+    // Render slides
+    track.innerHTML = recommendations.map((r, index) => `
+      <div class="carousel-slide ${index === 0 ? 'active' : ''}" data-index="${index}">
         <blockquote class="rec-card" itemscope itemtype="https://schema.org/Review">
           <div class="rec-content">
             <p class="rec-quote" itemprop="reviewBody">"${r.quote}"</p>
@@ -289,14 +344,51 @@
           </footer>
           <meta itemprop="itemReviewed" content="Aryan Maheshwari">
         </blockquote>
-      `).join('');
-    } catch (e) {
-      console.error('Failed to load recommendations:', e);
-    }
+      </div>
+    `).join('');
+
+    // Render dots
+    dots.innerHTML = recommendations.map((_, index) => `
+      <button class="carousel-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})" aria-label="Go to recommendation ${index + 1}"></button>
+    `).join('');
+  }
+
+  function changeSlide(direction) {
+    const newSlide = (currentSlide + direction + recommendations.length) % recommendations.length;
+    goToSlide(newSlide);
+  }
+
+  function goToSlide(slideIndex) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    // Remove active class from current slide and dot
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    
+    // Add active class to new slide and dot
+    currentSlide = slideIndex;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    // Reset auto-slide timer
+    resetAutoSlide();
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      changeSlide(1);
+    }, 5000); // Change slide every 5 seconds
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
   }
 
   function toggleReadMore(index) {
-    const card = document.querySelectorAll('.rec-card')[index];
+    const slide = document.querySelector(`[data-index="${index}"]`);
+    const card = slide.querySelector('.rec-card');
     const shortQuote = card.querySelector('.rec-quote');
     const fullQuote = card.querySelector('.rec-quote-full');
     const readMoreBtn = card.querySelector('.read-more-btn');
@@ -319,6 +411,13 @@
       readMoreBtn.setAttribute('aria-expanded', 'true');
     }
   }
+
+  // Pause auto-slide on hover
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel-container');
+    carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    carousel.addEventListener('mouseleave', startAutoSlide);
+  });
 
   loadRecs();
 </script>
