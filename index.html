@@ -373,7 +373,10 @@
     // Render dots
     dots.innerHTML = recommendations.map((_, index) => `
       <button class="carousel-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})" aria-label="Go to recommendation ${index + 1}"></button>
-      `).join('');
+    `).join('');
+    
+    // Reset current slide
+    currentSlide = 0;
   }
 
   function changeSlide(direction) {
@@ -411,12 +414,18 @@
 
   function toggleReadMore(index) {
     const slide = document.querySelector(`[data-index="${index}"]`);
+    if (!slide) return;
+    
     const card = slide.querySelector('.rec-card');
+    if (!card) return;
+    
     const shortQuote = card.querySelector('.rec-quote');
     const fullQuote = card.querySelector('.rec-quote-full');
     const readMoreBtn = card.querySelector('.read-more-btn');
     const readMoreText = card.querySelector('.read-more-text');
     const readMoreIcon = card.querySelector('.read-more-icon');
+    
+    if (!shortQuote || !fullQuote || !readMoreBtn || !readMoreText || !readMoreIcon) return;
     
     if (shortQuote.style.display === 'none') {
       // Collapse
@@ -517,36 +526,36 @@
           </button>
         </form>
       </div>
-    </div>
-    
-    <div class="contact-info-section">
-      <h3>Connect With Me</h3>
-      <p>Prefer direct contact? Reach out through any of these channels:</p>
       
-      <div class="resume-buttons">
-        <a href="assets/AI Engineer Resume.pdf" target="_blank" rel="noopener">
-          <button class="resume-btn view-resume-btn">
-            <i class="fas fa-eye"></i>
-            View Resume
-          </button>
-        </a>
-        <a href="assets/AI Engineer Resume.pdf" download>
-          <button class="resume-btn download-resume-btn">
-            <i class="fas fa-download"></i>
-            Download Resume
-          </button>
-        </a>
-      </div>
-      
-      <div class="icon-links">
-        <a href="https://github.com/Aryan-2602" target="_blank" aria-label="GitHub Profile">
-          <i class="fab fa-github fa-2x"></i>
-          <span>GitHub</span>
-        </a>
-        <a href="https://www.linkedin.com/in/maheshwariaryan/" target="_blank" aria-label="LinkedIn Profile">
-          <i class="fab fa-linkedin fa-2x"></i>
-          <span>LinkedIn</span>
-        </a>
+      <div class="contact-info-section">
+        <h3>Connect With Me</h3>
+        <p>Prefer direct contact? Reach out through any of these channels:</p>
+        
+        <div class="resume-buttons">
+          <a href="assets/AI Engineer Resume.pdf" target="_blank" rel="noopener">
+            <button class="resume-btn view-resume-btn">
+              <i class="fas fa-eye"></i>
+              View Resume
+            </button>
+          </a>
+          <a href="assets/AI Engineer Resume.pdf" download>
+            <button class="resume-btn download-resume-btn">
+              <i class="fas fa-download"></i>
+              Download Resume
+            </button>
+          </a>
+        </div>
+        
+        <div class="icon-links">
+          <a href="https://github.com/Aryan-2602" target="_blank" aria-label="GitHub Profile">
+            <i class="fab fa-github fa-2x"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/maheshwariaryan/" target="_blank" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin fa-2x"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

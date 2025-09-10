@@ -152,6 +152,9 @@ aside{
 
 /* Contact Section */
 .contact-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   margin-top: 20px;
 }
 
@@ -170,10 +173,6 @@ aside{
 
 .contact-info-section{
   padding: 30px;
-  margin-top: 40px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .form-header{
@@ -458,6 +457,7 @@ aside{
 .carousel-track{
   display: flex;
   transition: transform 0.5s ease-in-out;
+  position: relative;
 }
 
 .carousel-slide{
@@ -465,11 +465,16 @@ aside{
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .carousel-slide.active{
   opacity: 1;
   transform: translateX(0);
+  position: relative;
 }
 
 .rec-card{
@@ -676,9 +681,12 @@ aside{
   }
 
   /* Contact section on mobile */
+  .contact-container{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
   .contact-info-section{
     padding: 20px;
-    margin-top: 32px;
   }
   .form-header{
     padding: 24px 20px 20px;
