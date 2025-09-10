@@ -4,6 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aryan Maheshwari | AI Portfolio</title>
+  
+  <!-- SEO & Metadata -->
+  <meta name="description" content="Aryan Maheshwari - AI Engineer | M.S. Applied Data Science @ USC | Building production-ready ML systems and autonomous driving solutions." />
+  <meta name="keywords" content="AI Engineer, Machine Learning, Data Science, USC, Autonomous Driving, ML Systems, Python, TensorFlow, PyTorch, Reinforcement Learning" />
+  <meta name="author" content="Aryan Maheshwari" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aryanmaheshwari.is-a.dev" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aryan Maheshwari | AI Portfolio" />
+  <meta property="og:description" content="Explore my projects in AI, ML pipelines, reinforcement learning, and autonomous systems." />
+  <meta property="og:image" content="https://aryanmaheshwari.is-a.dev/assets/IMG_0994.jpg" />
+  <meta property="og:url" content="https://aryanmaheshwari.is-a.dev" />
+  <meta property="og:site_name" content="Aryan Maheshwari Portfolio" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aryan Maheshwari | AI Portfolio" />
+  <meta name="twitter:description" content="Explore my projects in AI, ML pipelines, reinforcement learning, and autonomous systems." />
+  <meta name="twitter:image" content="https://aryanmaheshwari.is-a.dev/assets/IMG_0994.jpg" />
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#000000" />
+  <meta name="msapplication-TileColor" content="#000000" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
   <!-- Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -303,120 +329,57 @@
 <!-- Recommendations -->
 <section class="section alt" id="recommendations">
   <h2>🌟 Recommendations</h2>
-  <div class="carousel-container">
-    <div class="carousel-wrapper">
-      <div class="carousel-track" id="carousel-track"></div>
-    </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous recommendation">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <div class="carousel-dots" id="carousel-dots"></div>
-      <button class="carousel-btn next-btn" onclick="changeSlide(1)" aria-label="Next recommendation">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-  </div>
+  <div class="rec-grid" id="rec-grid"></div>
 </section>
 
 <script>
-  let currentSlide = 0;
   let recommendations = [];
-  let autoSlideInterval;
 
   async function loadRecs() {
     try {
       const res = await fetch('assets/recommendations.json');
       recommendations = await res.json();
-      renderCarousel();
-      startAutoSlide();
+      renderGrid();
     } catch (e) {
       console.error('Failed to load recommendations:', e);
     }
   }
 
-  function renderCarousel() {
-    const track = document.getElementById('carousel-track');
-    const dots = document.getElementById('carousel-dots');
+  function renderGrid() {
+    const grid = document.getElementById('rec-grid');
     
-    // Render slides
-    track.innerHTML = recommendations.map((r, index) => `
-      <div class="carousel-slide ${index === 0 ? 'active' : ''}" data-index="${index}">
-        <blockquote class="rec-card" itemscope itemtype="https://schema.org/Review">
-          <div class="rec-content">
-            <p class="rec-quote" itemprop="reviewBody">"${r.quote}"</p>
-            <p class="rec-quote-full" itemprop="reviewBody" style="display: none;">"${r.quote}"</p>
-          </div>
-          <button class="read-more-btn" onclick="toggleReadMore(${index})" aria-expanded="false" aria-label="Read more recommendation">
-            <span class="read-more-text">Read More</span>
-            <i class="fas fa-chevron-down read-more-icon"></i>
-          </button>
-          <footer class="rec-footer">
-            <div class="rec-info">
-              <strong itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <span itemprop="name">${r.name}</span>
-              </strong><br>
-              <span>${r.role}</span>
-              <div>
-                <a href="${r.linkedin}" target="_blank" rel="noopener"
-                   class="linkedin-icon" aria-label="LinkedIn profile of ${r.name}">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </div>
+    grid.innerHTML = recommendations.map((r, index) => `
+      <blockquote class="rec-card" itemscope itemtype="https://schema.org/Review">
+        <div class="rec-content">
+          <p class="rec-quote" itemprop="reviewBody">"${r.quote}"</p>
+          <p class="rec-quote-full" itemprop="reviewBody" style="display: none;">"${r.quote}"</p>
+        </div>
+        <button class="read-more-btn" onclick="toggleReadMore(${index})" aria-expanded="false" aria-label="Read more recommendation">
+          <span class="read-more-text">Read More</span>
+          <i class="fas fa-chevron-down read-more-icon"></i>
+        </button>
+        <footer class="rec-footer">
+          <div class="rec-info">
+            <strong itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span itemprop="name">${r.name}</span>
+            </strong><br>
+            <span>${r.role}</span>
+            <div>
+              <a href="${r.linkedin}" target="_blank" rel="noopener"
+                 class="linkedin-icon" aria-label="LinkedIn profile of ${r.name}">
+                <i class="fab fa-linkedin"></i>
+              </a>
             </div>
-          </footer>
-          <meta itemprop="itemReviewed" content="Aryan Maheshwari">
-        </blockquote>
-      </div>
+          </div>
+        </footer>
+        <meta itemprop="itemReviewed" content="Aryan Maheshwari">
+      </blockquote>
     `).join('');
-
-    // Render dots
-    dots.innerHTML = recommendations.map((_, index) => `
-      <button class="carousel-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})" aria-label="Go to recommendation ${index + 1}"></button>
-    `).join('');
-    
-    // Reset current slide
-    currentSlide = 0;
-  }
-
-  function changeSlide(direction) {
-    const newSlide = (currentSlide + direction + recommendations.length) % recommendations.length;
-    goToSlide(newSlide);
-  }
-
-  function goToSlide(slideIndex) {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    
-    // Remove active class from current slide and dot
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    
-    // Add active class to new slide and dot
-    currentSlide = slideIndex;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-    
-    // Reset auto-slide timer
-    resetAutoSlide();
-  }
-
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-      changeSlide(1);
-    }, 5000); // Change slide every 5 seconds
-  }
-
-  function resetAutoSlide() {
-    clearInterval(autoSlideInterval);
-    startAutoSlide();
   }
 
   function toggleReadMore(index) {
-    const slide = document.querySelector(`[data-index="${index}"]`);
-    if (!slide) return;
-    
-    const card = slide.querySelector('.rec-card');
+    const cards = document.querySelectorAll('.rec-card');
+    const card = cards[index];
     if (!card) return;
     
     const shortQuote = card.querySelector('.rec-quote');
@@ -444,14 +407,9 @@
     }
   }
 
-  // Pause auto-slide on hover
   document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel-container');
-    carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-    carousel.addEventListener('mouseleave', startAutoSlide);
+    loadRecs();
   });
-
-  loadRecs();
 </script>
 
 <script>
@@ -559,6 +517,60 @@
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#research">Research</a>
+          <a href="#recommendations">Recommendations</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <div class="footer-social">
+          <a href="https://github.com/Aryan-2602" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/maheshwariaryan/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Resume</h3>
+        <div class="footer-resume">
+          <a href="assets/AI Engineer Resume.pdf" target="_blank" rel="noopener">
+            <i class="fas fa-eye"></i>
+            <span>View Resume</span>
+          </a>
+          <a href="assets/AI Engineer Resume.pdf" download>
+            <i class="fas fa-download"></i>
+            <span>Download</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-tagline">
+        <p>"Building the future with AI, one algorithm at a time."</p>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Aryan Maheshwari. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
