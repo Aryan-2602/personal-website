@@ -160,7 +160,7 @@
      <div class="card">
        <h3><a href="https://github.com/Aryan-2602/Task-Queue.git" target="_blank">⚡ Task-Queue</a></h3>
        <p>Built fault-tolerant distributed job scheduler with REST/gRPC APIs, Redis-backed queues, and worker pools, achieving 100k+ daily task executions with < 100ms scheduling latency under high concurrency.</p>
-     </div>
+    </div>
 
     <div class="card">
       <h3><a href="https://github.com/Aryan-2602/HistoHelp" target="_blank">🔬 HistoHelp</a></h3>
@@ -373,7 +373,7 @@
     // Render dots
     dots.innerHTML = recommendations.map((_, index) => `
       <button class="carousel-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})" aria-label="Go to recommendation ${index + 1}"></button>
-    `).join('');
+      `).join('');
   }
 
   function changeSlide(direction) {
@@ -445,28 +445,111 @@
   loadRecs();
 </script>
 
+<script>
+  // Contact form functionality
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    // Simulate form submission (replace with actual Formspree endpoint)
+    setTimeout(() => {
+      // Reset button
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      
+      // Show success message
+      showMessage('Thank you! Your message has been sent successfully.', 'success');
+      form.reset();
+    }, 2000);
+  });
+  
+  function showMessage(text, type) {
+    const message = document.createElement('div');
+    message.className = `form-message ${type}`;
+    message.textContent = text;
+    
+    const form = document.getElementById('contact-form');
+    form.parentNode.insertBefore(message, form);
+    
+    setTimeout(() => {
+      message.remove();
+    }, 5000);
+  }
+</script>
 
   <!-- Contact -->
   <section class="section" id="contact">
     <h2>📬 Contact</h2>
-    <div class="resume-buttons">
-      <a href="assets/AI Engineer Resume.pdf" target="_blank" rel="noopener">
-        <button class="resume-btn view-resume-btn">
-          <i class="fas fa-eye"></i>
-          View Resume
-        </button>
-      </a>
-      <a href="assets/AI Engineer Resume.pdf" download>
-        <button class="resume-btn download-resume-btn">
-          <i class="fas fa-download"></i>
-          Download Resume
-        </button>
+    
+    <div class="contact-container">
+      <div class="contact-form-section">
+        <h3>Get in Touch</h3>
+        <p>Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+        
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or how I can help..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+      
+      <div class="contact-info-section">
+        <h3>Connect With Me</h3>
+        <p>Prefer direct contact? Reach out through any of these channels:</p>
+        
+        <div class="resume-buttons">
+          <a href="assets/AI Engineer Resume.pdf" target="_blank" rel="noopener">
+            <button class="resume-btn view-resume-btn">
+              <i class="fas fa-eye"></i>
+              View Resume
+            </button>
+          </a>
+          <a href="assets/AI Engineer Resume.pdf" download>
+            <button class="resume-btn download-resume-btn">
+              <i class="fas fa-download"></i>
+              Download Resume
+            </button>
       </a>
     </div>
+        
     <div class="icon-links">
-      <a href="https://github.com/Aryan-2602" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-      <a href="https://www.linkedin.com/in/maheshwariaryan/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-      <a href="mailto:aryan26.03.02@gmail.com"><i class="fas fa-envelope fa-2x"></i></a>
+          <a href="https://github.com/Aryan-2602" target="_blank" aria-label="GitHub Profile">
+            <i class="fab fa-github fa-2x"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/maheshwariaryan/" target="_blank" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin fa-2x"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:aryan26.03.02@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope fa-2x"></i>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
