@@ -1,1 +1,4 @@
 .*correctionpat.txt
+
+# macOS
+.DS_Store
