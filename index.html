@@ -32,7 +32,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
   <!-- Typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
@@ -48,11 +48,12 @@
       <h1 class="logo">Aryan Maheshwari</h1>
       <nav>
         <a href="#about">About</a>
-        <a href="#research">Research</a>
         <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
         <a href="#recommendations">Recommendations</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -80,7 +81,7 @@
   </section>
 
   <!-- About -->
-  <section class="section" id="about">
+  <section class="section section-reveal" id="about">
     <h2>🎓 About Me</h2>
     <p>
       I'm Aryan Maheshwari, an AI Engineer currently pursuing an M.S. in Applied Data Science at the University of Southern California, after completing a B.Tech in Artificial Intelligence and Data Science at K.J. Somaiya Institute of Technology.
@@ -103,35 +104,8 @@
     <p>Let's build the future of AI together.</p>
   </section>
 
-  <!-- Research -->
-  <section class="section alt" id="research">
-    <h2>📄 Research</h2>
-    
-    <div class="card">
-      <h3><a href="https://www.jetir.org/papers/JETIR2402064.pdf" target="_blank">🤖 Role of AI in Developing Industries</a></h3>
-      <div class="meta">
-        <span><i class="far fa-calendar"></i> Published 2024</span>
-        <span><i class="fas fa-external-link-alt"></i> JETIR</span>
-      </div>
-      <p>This publication explores the implementation impact of AI across developing industries, highlighting practical adoption patterns, opportunities, and challenges in real-world systems.</p>
-    </div>
-
-    <div class="card">
-      <h3><a href="https://ieeexplore.ieee.org/document/10455039" target="_blank">🔗 Exploring the Implementation of BCECMS for Election Security and Transparency</a></h3>
-      <div class="meta">
-        <span><i class="far fa-calendar"></i> Published 2024</span>
-        <span><i class="fas fa-external-link-alt"></i> IEEE Xplore</span>
-      </div>
-      <p>This work examines the Blockchain-Based Election Conducting and Management System (BCECMS) as a framework to improve election integrity, transparency, and process trust through auditable digital workflows.</p>
-    </div>
-
-    <p>
-      My research interests span machine learning systems, autonomous mobility, and applied NLP. I am particularly interested in the intersection of reinforcement learning, LLM-driven analysis, and robust real-world deployment.
-    </p>
-  </section>
-
   <!-- Education -->
-  <section class="section alt" id="education">
+  <section class="section section-reveal" id="education">
     <h2>🎓 Education</h2>
     
     <div class="card">
@@ -155,39 +129,118 @@
     </div>
   </section>
 
-  <!-- Technical Skills -->
-  <section class="section alt" id="skills">
-    <h2>🛠️ Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Languages</h3>
-        <div class="skills">
-          <span>Python</span><span>SQL</span><span>C++</span><span>JavaScript/TypeScript</span>
-        </div>
+  <!-- Experience -->
+  <section class="section section-reveal" id="experience">
+    <h2>💼 Experience</h2>
+
+    <div class="card">
+      <h3>🔬 AI Engineer — USC Marshall School of Business</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> Dec 2025 – Present</span>
+        <span><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</span>
       </div>
-      <div class="skill-category">
-        <h3>ML Frameworks</h3>
-        <div class="skills">
-          <span>TensorFlow</span><span>PyTorch</span><span>Keras</span><span>Scikit-learn</span><span>NumPy</span><span>Matplotlib/Seaborn</span>
-        </div>
+      <ul class="bullets">
+        <li>Engineered LLM-based ETL pipelines and agentic NLP workflows to semantically index 500+ documents across 10+ sources, enabling structured policy data analysis.</li>
+        <li>Improved document extraction accuracy by 25% and reduced parsing errors by 35% by developing a multimodal Vision-Language Model (VLM) and OCR pipeline for PDFs, scans, and tables.</li>
+      </ul>
+      <div class="skills">
+        <span>LLM ETL</span><span>Agentic NLP</span><span>VLM</span><span>OCR</span><span>Document AI</span>
       </div>
-      <div class="skill-category">
-        <h3>LLM Tooling</h3>
-        <div class="skills">
-          <span>LangChain</span><span>LangGraph</span><span>MCP</span><span>Ollama</span>
-        </div>
+    </div>
+
+    <div class="card">
+      <h3>🤖 AI Engineer — Convexia (YC'25)</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> Mar 2025 – Sep 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
       </div>
-      <div class="skill-category">
-        <h3>Cloud & MLOps</h3>
-        <div class="skills">
-          <span>AWS</span><span>GCP</span><span>Azure</span><span>MLOps</span><span>CUDA</span><span>Data Pipelines</span><span>Git</span>
-        </div>
+      <ul class="bullets">
+        <li>Built end-to-end evaluation pipeline integrating 6 ML models with MLflow tracking, SHAP-based feature visualization, and confidence/disagreement detection across biomedical and clinical datasets, achieving 100% reproducibility.</li>
+        <li>Reduced CI/CD runtime by 30% by modularizing training and inference workflows, implementing structured logging, and automating environment setup.</li>
+      </ul>
+      <div class="skills">
+        <span>MLflow</span><span>SHAP</span><span>MLOps</span><span>CI/CD</span><span>Python</span>
       </div>
-      <div class="skill-category">
-        <h3>Backend & APIs</h3>
-        <div class="skills">
-          <span>FastAPI</span><span>Flask</span><span>Django</span><span>REST APIs</span>
-        </div>
+    </div>
+
+    <div class="card">
+      <h3>🎮 Machine Learning Engineer — Easley Dunn Productions, Inc</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> Jun 2025 – Sep 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</span>
+      </div>
+      <ul class="bullets">
+        <li>Improved player-coach match accuracy by 25% and reduced class imbalance by 40% by building a hybrid ML recommendation engine leveraging 15+ features with rule-based constraints.</li>
+        <li>Led a cross-functional team of 8 engineers to design, build, and deploy an AI-powered sports simulation and personalization platform, overseeing model architecture, data pipelines, and production deployment.</li>
+      </ul>
+      <div class="skills">
+        <span>Recommendation Systems</span><span>Hybrid ML</span><span>Team Leadership</span><span>Python</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🚗 Machine Learning Engineer — USC Autodrive Lab</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> Jun 2025 – Present</span>
+        <span><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</span>
+      </div>
+      <ul class="bullets">
+        <li>Engineered perception, motion prediction, and planning models for autonomous driving; deployed transformer-based generative AI on NVIDIA CUDA clusters, achieving 4x faster training throughput.</li>
+        <li>Developed and trained Deep Reinforcement Learning algorithms (PPO, SAC) for autonomous vehicle navigation, achieving 0.4m mean positional error across 500+ closed-loop test runs.</li>
+      </ul>
+      <div class="skills">
+        <span>Deep RL</span><span>PPO</span><span>SAC</span><span>CUDA</span><span>Autonomous Driving</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🤖 AI Engineer — AGIE AI</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> Jan 2024 – Nov 2024</span>
+        <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
+      </div>
+      <ul class="bullets">
+        <li>Reduced chatbot response latency by 23% (1.3s to 1.0s) by integrating Dialogflow with Vertex AI on GCP, improving user engagement across 2 pilot client campaigns.</li>
+        <li>Built an embedding-based retrieval and ranking pipeline using cosine similarity, achieving 80%+ precision@k in relevance matching for high-potential startup discovery.</li>
+      </ul>
+      <div class="skills">
+        <span>Dialogflow</span><span>Vertex AI</span><span>GCP</span><span>Embeddings</span><span>Retrieval</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🧪 AI Engineer — Dawn Digitech</h3>
+      <div class="meta">
+        <span><i class="far fa-calendar"></i> Jan 2023 – Dec 2023</span>
+        <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
+      </div>
+      <ul class="bullets">
+        <li>Designed LLM-based pipelines for AI-driven interview systems, implementing sentiment analysis and candidate evaluation workflows using LLMs and open-source frameworks.</li>
+        <li>Improved sentiment classification accuracy by 20% by building a hybrid analysis system combining BERT, VADER, and LLM-based prompting.</li>
+      </ul>
+      <div class="skills">
+        <span>LLMs</span><span>Sentiment Analysis</span><span>BERT</span><span>VADER</span><span>NLP</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Achievements -->
+  <section class="section section-reveal" id="achievements">
+    <h2>🏆 Achievements</h2>
+
+    <div class="card">
+      <h3>🥇 1st Place — MiroxKiro LA Hackathon</h3>
+      <div class="meta">
+        <span><i class="fas fa-trophy"></i> 1st among 100+ teams</span>
+      </div>
+      <p>Architected a multi-agent AI system with LLM-based reasoning, retrieval pipelines, and geospatial intelligence to deliver personalized recommendations and spatial experiences.</p>
+      <div class="skills">
+        <span>Multi-Agent Systems</span><span>LLM Reasoning</span><span>RAG</span><span>Geospatial AI</span>
+      </div>
+      <div class="project-links">
+        <a href="#" rel="noopener" aria-disabled="true"><i class="fas fa-play"></i> Demo</a>
+        <a href="#" rel="noopener" aria-disabled="true"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </div>
   </section>
@@ -198,7 +251,7 @@
     replace the <div class="project-placeholder">...</div> block inside
     .project-image with an <img src="assets/your-screenshot.png" alt="..."> tag.
   -->
-  <section class="section alt" id="projects">
+  <section class="section section-reveal" id="projects">
     <h2>🚀 Projects</h2>
     <div class="projects-grid">
 
@@ -207,9 +260,9 @@
           <div class="project-placeholder"><i class="fas fa-graduation-cap"></i></div>
         </div>
         <h3><a href="https://github.com/Aryan-2602/Edumate-AI" target="_blank">🎓 EduMate.ai</a></h3>
-        <p>AI-powered educational platform with RAG-based Q&A, quiz/flashcard generation, and real-time chat, ingesting 10,000+ textbook pages at sub-2s query latency.</p>
+        <p>Agentic AI-powered educational platform with RAG-based Q&A, quiz generation, and real-time chat using Cohere embeddings, Pinecone, LangChain, GPT-4, and FastAPI, supporting semantic retrieval across 10,000+ pages of textbook content.</p>
         <div class="skills">
-          <span>GPT-4</span><span>LangChain</span><span>Chroma</span><span>FastAPI</span><span>Next.js</span><span>AWS Fargate</span>
+          <span>RAG</span><span>Cohere</span><span>Pinecone</span><span>LangChain</span><span>GPT-4</span><span>FastAPI</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Aryan-2602/Edumate-AI" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
@@ -221,9 +274,9 @@
           <div class="project-placeholder"><i class="fas fa-book-open"></i></div>
         </div>
         <h3><a href="https://github.com/Aryan-2602/HieQue" target="_blank">📚 HieQue</a></h3>
-        <p>Scalable multi-level text retrieval framework combining Gaussian Mixture Models, GPT-4-turbo, BM25, and semantic search, improving re-ranking precision by 30%.</p>
+        <p>Scalable multi-level text retrieval framework integrating Gaussian Mixture Models, GPT-4-turbo, BM25, and semantic search, enabling granular content extraction from 300+ page academic textbooks stored in ChromaDB, improving re-ranking precision by 30%.</p>
         <div class="skills">
-          <span>GPT-4-turbo</span><span>BM25</span><span>Semantic Search</span><span>GMM</span><span>Python</span>
+          <span>GMM</span><span>GPT-4-turbo</span><span>BM25</span><span>ChromaDB</span><span>Semantic Search</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Aryan-2602/HieQue" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
@@ -289,119 +342,66 @@
     </div>
   </section>
 
-  <!-- Experience -->
-  <section class="section" id="experience">
-    <h2>💼 Experience</h2>
-
+  <!-- Research -->
+  <section class="section section-reveal" id="research">
+    <h2>📄 Research</h2>
+    
     <div class="card">
-      <h3>🔬 AI Engineer — USC Marshall School of Business</h3>
+      <h3><a href="https://www.jetir.org/papers/JETIR2402064.pdf" target="_blank">🤖 Role of AI in Developing Industries</a></h3>
       <div class="meta">
-        <span><i class="far fa-calendar"></i> Dec 2025 – Present</span>
-        <span><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</span>
+        <span><i class="far fa-calendar"></i> Published 2024</span>
+        <span><i class="fas fa-external-link-alt"></i> JETIR</span>
       </div>
-      <ul class="bullets">
-        <li>Developed LLM-based NLP pipelines to extract, normalize, and semantically index insights from 500+ nuclear energy and SMR-related documents for structured analysis.</li>
-        <li>Instrumented agent-style data workflows across 10+ public sources with dataset versioning, quality checks, and prompt-level evaluation, reducing manual analysis time by 60%.</li>
-      </ul>
-      <div class="skills">
-        <span>LLM Pipelines</span><span>NLP</span><span>Data Versioning</span><span>Agent Workflows</span><span>Prompt Evaluation</span>
-      </div>
+      <p>This publication explores the implementation impact of AI across developing industries, highlighting practical adoption patterns, opportunities, and challenges in real-world systems.</p>
     </div>
 
     <div class="card">
-      <h3>🤖 AI Engineer — Convexia (YC'25)</h3>
+      <h3><a href="https://ieeexplore.ieee.org/document/10455039" target="_blank">🔗 Exploring the Implementation of BCECMS for Election Security and Transparency</a></h3>
       <div class="meta">
-        <span><i class="far fa-calendar"></i> Mar 2025 – Sep 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+        <span><i class="far fa-calendar"></i> Published 2024</span>
+        <span><i class="fas fa-external-link-alt"></i> IEEE Xplore</span>
       </div>
-      <ul class="bullets">
-        <li>Created end-to-end toxicity evaluation pipeline integrating 6 ML models with MLflow tracking, SHAP-based feature visualization, and confidence/disagreement detection across organ-toxicity modules, ensuring 100% reproducibility.</li>
-        <li>Streamlined infrastructure by modularizing training and inference workflows, implementing structured logging, and reducing CI/CD runtime by 30% through optimized directory design and automated quick-start setup.</li>
-      </ul>
-      <div class="skills">
-        <span>MLOps</span><span>MLflow</span><span>SHAP</span><span>CI/CD</span><span>Python</span>
-      </div>
+      <p>This work examines the Blockchain-Based Election Conducting and Management System (BCECMS) as a framework to improve election integrity, transparency, and process trust through auditable digital workflows.</p>
     </div>
 
-    <div class="card">
-      <h3>🎮 Machine Learning Engineer — Easley Dunn Productions.Inc</h3>
-      <div class="meta">
-        <span><i class="far fa-calendar"></i> Jun 2025 – Sep 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</span>
+    <p>
+      My research interests span machine learning systems, autonomous mobility, and applied NLP. I am particularly interested in the intersection of reinforcement learning, LLM-driven analysis, and robust real-world deployment.
+    </p>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="section section-reveal" id="skills">
+    <h2>🛠️ Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Languages</h3>
+        <div class="skills">
+          <span>Python</span><span>Java</span><span>C++</span><span>TypeScript</span><span>JAX</span><span>SQL</span><span>NoSQL</span><span>React</span>
+        </div>
       </div>
-      <ul class="bullets">
-        <li>Built hybrid coach selection engine integrating rule-based constraints with AI-driven scoring models, dynamically evaluating 15+ attributes to improve team matching accuracy by 25% and reduce lineup imbalance by 40%.</li>
-        <li>Led cross-functional team of 8 interns to design AI-powered sports simulation platform, overseeing model architecture, data pipelines, and deployment to deliver a production-ready system.</li>
-      </ul>
-      <div class="skills">
-        <span>Machine Learning</span><span>Team Leadership</span><span>Sports Analytics</span><span>Python</span>
+      <div class="skill-category">
+        <h3>Machine Learning</h3>
+        <div class="skills">
+          <span>Multi-Agent Systems</span><span>LLM Fine-Tuning</span><span>Deep Learning</span><span>RAG</span><span>Vector Databases</span><span>Reinforcement Learning</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>ML Systems & Infrastructure</h3>
+        <div class="skills">
+          <span>LLM Evaluation</span><span>Prompt Engineering</span><span>MCP</span><span>Orchestration</span><span>CUDA</span><span>Apache Spark</span><span>MLflow</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Cloud & DevOps</h3>
+        <div class="skills">
+          <span>AWS (S3, OpenSearch)</span><span>GCP (Vertex AI, Dialogflow)</span><span>Docker</span><span>CI/CD</span>
+        </div>
       </div>
     </div>
-
-    <div class="card">
-      <h3>🚗 Machine Learning Engineer — USC AutoDrive Lab</h3>
-      <div class="meta">
-        <span><i class="far fa-calendar"></i> Jun 2025 – Present</span>
-        <span><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</span>
-      </div>
-      <ul class="bullets">
-        <li>Engineered perception, motion prediction, and planning models for autonomous driving; deployed transformer-based generative AI on NVIDIA CUDA clusters, achieving 4 times faster training throughput.</li>
-        <li>Programmed Deep RL algorithms (PPO, SAC) for vehicle navigation, attaining 0.4 m mean positional deviation across 500+ closed-loop test runs.</li>
-      </ul>
-      <div class="skills">
-        <span>Deep RL</span><span>PPO</span><span>SAC</span><span>CUDA</span><span>Autonomous Driving</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>🤖 AI Engineer — AGIE AI</h3>
-      <div class="meta">
-        <span><i class="far fa-calendar"></i> Jan 2024 – Nov 2024</span>
-        <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
-      </div>
-      <ul class="bullets">
-        <li>Developed and deployed Dialogflow-based chatbot with Vertex AI integration, reducing response latency by 23% (1.3s → 1.0s) and improving engagement across 2 pilot client campaigns.</li>
-        <li>Directed a team of 3 interns to deliver Proof of Concept leveraging GPT-3.5 for semantic similarity scoring and NLP-based retrieval, achieving >80% relevance precision for mapping AI research insights to funded startups.</li>
-      </ul>
-      <div class="skills">
-        <span>Generative AI</span><span>Dialogflow</span><span>Vertex AI</span><span>GPT-3.5</span><span>Team Leadership</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>🛰️ Machine Learning Engineer — Exicom Technologies</h3>
-      <div class="meta">
-        <span><i class="far fa-calendar"></i> Dec 2023</span>
-        <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
-      </div>
-      <ul class="bullets">
-        <li>Optimized ML data pipelines for airborne communication systems, reducing latency by 20% (250ms → 200ms) and improving experiment efficiency by 25% through API integrations with PostgreSQL.</li>
-        <li>Tuned feature store queries and indexing strategies, cutting execution time by 35% under high concurrency, ensuring scalability for training and batch inference.</li>
-      </ul>
-      <div class="skills">
-        <span>Machine Learning</span><span>PostgreSQL</span><span>Data Pipelines</span><span>Python</span><span>API Integration</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>🧪 Machine Learning Engineer — Dawn Digitech</h3>
-      <div class="meta">
-        <span><i class="far fa-calendar"></i> Feb 2023 – May 2023</span>
-        <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
-      </div>
-      <ul class="bullets">
-        <li>Researched AI-driven interview systems, synthesizing insights from 20+ academic papers and open-source projects; engineered preprocessing pipelines boosting sentiment model accuracy by 15%.</li>
-        <li>Devised and deployed sentiment analysis models with BERT and VADER to classify polarity, leveraging TensorFlow/PyTorch for NLP workflows and advancing team-wide ML capability by 30%.</li>
-      </ul>
-      <div class="skills">
-        <span>Machine Learning</span><span>NLP</span><span>BERT</span><span>VADER</span><span>TensorFlow</span><span>PyTorch</span>
-      </div>
-    </div>
-
   </section>
 
 <!-- Recommendations -->
-<section class="section alt" id="recommendations">
+<section class="section section-reveal" id="recommendations">
   <h2>🌟 Recommendations</h2>
   <div class="rec-grid" id="rec-grid"></div>
 </section>
@@ -539,7 +539,7 @@
 </script>
 
   <!-- Contact -->
-  <section class="section" id="contact">
+  <section class="section section-reveal" id="contact">
     <h2>📬 Contact</h2>
     
     <div class="contact-container">
@@ -617,9 +617,12 @@
         <h3>Quick Links</h3>
         <nav class="footer-nav">
           <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
           <a href="#experience">Experience</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="#skills">Skills</a>
           <a href="#recommendations">Recommendations</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -663,6 +666,31 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Subtle section reveal on scroll (respects reduced motion)
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section-reveal');
+      if (!sections.length) return;
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        sections.forEach(s => s.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      sections.forEach(s => observer.observe(s));
+    });
+  </script>
 
 </body>
 </html>
